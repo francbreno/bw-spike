@@ -1,0 +1,10 @@
+<div class="conta">
+  <span>{{ conta.nome }}</span><a [routerLink]="['/contas', conta.id]">Detalhes</a><br>
+  <span>{{ conta.saldo | currency }}</span><br>
+  <ul>
+    <li *ngFor="let subconta of conta.contas">
+      {{ subconta.nome }} - {{ subconta.saldo | currency }}
+      <a [routerLink]="['/contas', subconta.id]">Detalhes</a>
+    </li>
+  </ul>
+</div>
